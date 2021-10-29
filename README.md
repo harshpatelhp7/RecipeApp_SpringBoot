@@ -3,18 +3,18 @@
 This repo is dedicated for Assignment 1 of Java Web development
 
 Ming Yang:
--[ ] Register into the application
--[ ] Login Into the application
+-[x] Register into the application
+-[x] Login Into the application
 
 
 Rafaelak:
--[ ] Logout of the application
--[ ] Create a recipe
+-[x] Logout of the application
+-[x] Create a recipe
 
 Harsh:
--[ ] View a Recipe
--[ ] Search for a Recipe
+-[x] View a Recipe
+-[x] Search for a Recipe
 
 Hans:
--[ ] Plan a meal
--[ ] View Profile
+-[x] Plan a meal
+-[x] View Profile
