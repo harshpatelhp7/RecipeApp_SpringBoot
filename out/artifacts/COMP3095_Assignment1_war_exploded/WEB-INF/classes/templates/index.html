@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/style.css}" />
+
+    <title>Registration</title>
+    <style>
+        .container3 {
+            height: 200px;
+            position: relative;
+            border: 3px solid green;
+            vertical-align: baseline;
+            width: 900px;  float:left;
+
+        }
+        .container1 {
+
+            position: relative;
+            border: 3px solid green;
+            vertical-align: baseline;
+            width: 500px; height: 400px;
+
+            float:left;
+        }
+        .container2 {
+
+            position: relative;
+            border: 3px solid green;
+            vertical-align: baseline;
+            width: 900px; height: 200px;  float:left;
+        }
+        .navbar {
+            float: right;
+
+        }
+
+    </style>
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" th:href="@{/}">Registration and
+                Login Assignment 2</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">task1</a></li>
+                <li class="active"><a href="#">task2</a></li>
+                <li class="active"><a href="#">task3</a></li>
+                <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br>
+<br>
+<div class="container1">
+    <h2></h2>
+
+    <p>
+        Welcome <span sec:authentication="principal.username">User</span>
+    </p>
+</div>
+<div class="container2">
+
+
+</div>
+<div class="container3">
+    <h2></h2>
+
+</div>
+
+<script type="text/javascript"
+        th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+<script type="text/javascript"
+        th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+
+</body>
+</html>
