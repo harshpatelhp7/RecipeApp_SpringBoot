@@ -3,8 +3,8 @@
 This repo is dedicated for Assignment 1 of Java Web development
 
 Ming Yang:
-- [ ] Register into the application
-- [ ] Login Into the application
+- [x] Register into the application
+- [x] Login Into the application
 
 
 Rafaelak:
