@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background: aliceblue;
+    color: #505978;
+}
+
+ul li a{
+    display: block;
+    color: #505978;
+}
+
+.home_nav{
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    padding: 0 50px;
+    border-radius: 3px;
+}
+
+
+ul.menu,
+ul.social_items{
+    display: flex;
+}
+
+.home_nav ul.menu a{
+    margin: 0 5px;
+    width: 120px;
+    padding: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.home_nav .logo{
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.home_nav .logo span{
+    color: #7ddf96;
+}
+
+.home_nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home_nav .navbar_left,
+.navbar_right ul{
+    display: flex;
+    align-items: center;
+}
+
+.home_nav .menu{
+    margin-left: 50%;
+}
+
+.home_nav.home_nav .menu a{
+    height: 60px;
+    padding: 20px 12px;
+}
+
+.home_nav.home_nav .menu a:hover,
+.home_nav.home_nav .menu a.active{
+    border-bottom: 3px solid #505978;
+}
+
+.navbar_right ul li a{
+    margin: 0 5px;
+    padding: 5px 20px;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+.navbar_right ul li a:hover{
+    background: #505978;
+    color: #fff;
+    display: block;
+}
+
+.search_box{
+    position: relative;
+    height: 35px;
+    width: 225px;
+}
+
+.search_box input{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    border: 1px solid #505978;
+    width: 50px;
+    height: 35px;
+    border-radius: 3px;
+    outline: none;
+
+    transition: all 0.2s ease;
+}
+
+.search_box i{
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    z-index: 1;
+}
+
+.search_box input:focus{
+    width: 225px;
+}
+
+/* Drop-down menu */
+.sub-menu{
+    display: none;
+    font-size: smaller;
+}
+
+.navbar_right ul li:hover .sub-menu{
+    display: block;
+    position: absolute;
+}
+
+.navbar_right ul li:hover .sub-menu ul {
+    display: block;
+    margin: 10px;
+}
+.navbar_right ul li:hover .sub-menu ul li {
+    width: 150px;
+    padding: 10px;
+    background: white;
+    border-bottom: 1px solid #eaedf1;
+    border-radius: 0;
+    text-align: left;
+}
+
+.navbar_right ul li:hover .sub-menu ul li:last-child{
+    border-bottom: none;
+}
+
+#calendar {
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 60%;
+    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+    font-size: 14px;
+}
