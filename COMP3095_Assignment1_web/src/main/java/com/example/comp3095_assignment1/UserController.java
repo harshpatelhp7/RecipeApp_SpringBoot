@@ -58,4 +58,9 @@ public class UserController {
         return "user/index";
     }
 
+    @RequestMapping(value = "/")
+    public String index1(){
+        return "login";
+    }
+
 }
