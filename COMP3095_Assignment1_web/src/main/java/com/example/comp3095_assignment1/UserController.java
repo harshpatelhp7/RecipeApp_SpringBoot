@@ -1,5 +1,14 @@
 package com.example.comp3095_assignment1;
 
+/*********************************************************************************
+* Project: < Recipe Project>
+        * Assignment: < assignment #1 >
+        * Author(s): < Ming Yang>
+        * Student Number: < 101287844>
+        * Date: 11/05/2021
+        * Description: This is controller for this assignment, gives app url path to follow
+        *********************************************************************************/
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
@@ -56,6 +65,11 @@ public class UserController {
     @RequestMapping(value = "/index")
     public String index(){
         return "user/index";
+    }
+
+    @RequestMapping(value = "/")
+    public String index1(){
+        return "login";
     }
 
 }

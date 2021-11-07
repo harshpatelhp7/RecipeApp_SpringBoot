@@ -1,5 +1,12 @@
 package com.example.comp3095_assignment1;
-
+/*********************************************************************************
+ * Project: < Recipe Project>
+ * Assignment: < assignment #1 >
+ * Author(s): < Ming Yang>
+ * Student Number: < 101287844>
+ * Date: 10/31/2021
+ * Description: This is user model for user information, contain information for users
+ *********************************************************************************/
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
