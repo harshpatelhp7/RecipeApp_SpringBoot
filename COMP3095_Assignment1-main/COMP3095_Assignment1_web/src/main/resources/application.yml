@@ -1,0 +1,19 @@
+server:
+  port: 8082
+
+spring:
+  h2:
+    console:
+      path: /h2
+      enabled: true
+  application:
+    name: COMP3095_Assignment1
+  jpa:
+    show-sql: true   #print sql
+    hibernate:
+     ddl-auto: update
+  datasource:
+    url: jdbc:h2:file:./database/database
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:

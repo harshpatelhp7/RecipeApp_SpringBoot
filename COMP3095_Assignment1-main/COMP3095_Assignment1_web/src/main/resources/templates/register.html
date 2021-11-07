@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <script src="https://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+</head>
+<body>
+<h2>Register</h2>
+Please Enter Username：<input type="text" id="username"/><br><br>
+Please Enter Password：<input type="password" id="password" placeholder="More than 6 digits" /><br><br>
+Please Enter First Name：<input type="text" id="firstname"/><br><br>
+Please Enter Last Name：<input type="text" id="lastname"/><br><br>
+</select><br><br>
+<button onclick="register()">Register</button>
+</body>
+<script>
+  function register() {
+    var username = $("#username").val();
+    var password = $("#password").val();
+    var firstname = $("#firstname").val();
+    var lastname = $("#lastname").val();
+    if (password.length < 6){
+      alert("Password must be more than 6 digits");
+    } else {
+      $.post("/regist",{username:username,password:password,firstname:firstname,lastname:lastname},function (res) {
+        if (res ==="success"){
+          alert("Register Success");
+          window.location.href ="/login";
+        } else {
+          alert("Register failed. Please check and try again.");
+        }
+      })
+    }
+
+  }
+</script>
+</html>

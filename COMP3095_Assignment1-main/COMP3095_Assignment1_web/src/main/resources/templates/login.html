@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Page</title>
+  <script src="https://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous" />
+  <style>
+    body{
+      background: aliceblue;
+    }
+    .login{
+      text-align: right;
+    }
+    .title{
+      text-align: center;
+    }
+    form{
+      max-width: 350px;
+      margin: 0 auto;
+      padding-top: 50px;
+      padding-bottom: 100px
+    }
+  </style>
+</head>
+<body>
+
+  <div class="text-center">
+    <img class="img-fluid" src="images/recipeIcon.png" alt="icon"/>
+<!--Img from https://icon-library.com/icon/recipe-icon-4.html-->
+  </div>
+  <br>
+  <div class="border border-secondary p-3 rounded">
+    <p class="title">Access to Recipe Project</p>
+
+    <form action= "loggedIn" method="post">
+    <table>
+      <tr>
+        <td><label for="username">User Name: </label></td>
+        <td><input type="text" id="username" name="username" required></td>
+      </tr>
+      <tr>
+        <td><label for="password">Password: </label></td>
+        <td><input type="password" id="password" name="password" required></td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="login"/></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="remember-me" />&nbsp;Remember Me</td>
+      </tr>
+    </table>
+    </form>
+
+    <div id="formFooter">
+      Don't have an account? <a class="underlineHover" href="/goregister">Sign Up</a>
+    </div>
+  </div>
+
+</body>
+
+<script>
+/*  function login() {
+    var username = $("#username").val();
+    var password = $("#password").val();
+    $.post("/gologin",{username:username,password:password},function (res) {
+      if (res ==="success"){
+        window.location.href ="/index";
+      } else {
+        alert("Invalid Username/Password");
+      }
+    })
+  }*/
+</script>
+</html>
