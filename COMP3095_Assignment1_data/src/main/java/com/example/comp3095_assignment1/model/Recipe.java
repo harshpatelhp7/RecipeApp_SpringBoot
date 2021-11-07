@@ -1,3 +1,13 @@
+
+/*********************************************************************************
+ * Project: < Recipe Project>
+ * Assignment: < assignment #1 >
+ * Author(s): < Harsh Patel>
+ * Student Number: < 101243993>
+ * Date: 11/05/2021
+ * Description: This is model for this recipe entity, gives info about all the attributes of recipe.
+ *********************************************************************************/
+
 package com.example.comp3095_assignment1.model;
 
 import javax.persistence.*;
