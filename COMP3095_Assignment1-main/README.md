@@ -3,12 +3,12 @@
 This repo is dedicated for Assignment 1 of Java Web development
 
 Ming Yang:
-- [ ] Register into the application
-- [ ] Login Into the application
+- [x] Register into the application
+- [x] Login Into the application
+- [x] Logout of the application
 
 
 Rafaelak:
-- [ ] Logout of the application
 - [ ] Create a recipe
 
 Harsh:
