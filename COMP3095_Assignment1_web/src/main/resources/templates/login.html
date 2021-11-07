@@ -4,29 +4,53 @@
   <meta charset="UTF-8">
   <title>Home Page</title>
   <script src="https://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous" />
   <style>
-    a{
-      text-decoration: none;
-      color: #333333;
+    body{
+      background: aliceblue;
     }
-    #idiv{text-align: center;border-radius: 20px;
-      width: 300px;
-      height: 350px;
-      margin: auto;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;}
+    .login{
+      text-align: right;
+    }
+    .title{
+      text-align: center;
+    }
+    form{
+      max-width: 350px;
+      margin: 0 auto;
+      padding-top: 50px;
+      padding-bottom: 100px
+    }
   </style>
 </head>
 <body>
-<div id="idiv">
-  Username<input id="username" name="username" required="required"><br><br>
-  Password<input id="password" name="password" type="password" placeholder="more than 6 digits" required="required"><br><br>
-  <button id="login" onclick="login()">Login</button> <button> <a href="/goregister">Register</a></button>
-</div>
+<form>
+  <div class="text-center">
+    <img class="img-fluid" src="images/recipeIcon.png" alt="icon"/>
+<!--Img from https://icon-library.com/icon/recipe-icon-4.html-->
+  </div>
+  <br>
+  <div class="border border-secondary p-3 rounded">
+    <p class="title">Access to Recipe Project</p>
+    <p>
+      <input id="username" name="username" class="form-control" placeholder="Username"required="required">
+    </p>
+    <p>
+      <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="required">
+    </p>
+    <p>
+      <input type="checkbox" name="remember-me" />&nbsp;Remember Me
+    </p>
+    <p class="login">
+      <button id="login" onclick="login()" class="btn btn-primary">Login</button>
+    </p>
+    <div id="formFooter">
+      Don't have an account? <a class="underlineHover" href="/goregister">Sign Up</a>
+    </div>
+  </div>
+</form>
 </body>
 <script>
   function login() {
