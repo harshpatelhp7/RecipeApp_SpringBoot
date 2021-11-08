@@ -9,12 +9,13 @@ Ming Yang:
 
 
 Rafaelak:
-- [ ] Create a recipe
+
 
 Harsh:
 - [ ] View a Recipe
 - [ ] Search for a Recipe
 
 Hans:
+- [x] Create a recipe
 - [ ] Plan a meal
 - [ ] View Profile
