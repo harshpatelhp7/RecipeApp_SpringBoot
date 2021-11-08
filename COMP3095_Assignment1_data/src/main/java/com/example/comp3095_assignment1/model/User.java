@@ -7,11 +7,10 @@ package com.example.comp3095_assignment1.model;
  * Date: 10/31/2021
  * Description: This is user model for user information, contain information for users
  *********************************************************************************/
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class User {
@@ -23,10 +22,12 @@ public class User {
     private String firstname;
     private String lastname;
 
-    @OneToMany(mappedBy = "user")
-    private Set<Recipe> recipes = new HashSet<>();
-
     public User() {
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
     public User(String username, String password, String firstname, String lastname) {
@@ -36,9 +37,12 @@ public class User {
         this.lastname = lastname;
     }
 
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -71,21 +75,5 @@ public class User {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
-    }
-
-    public Set<Recipe> getRecipes() {
-        return recipes;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setRecipes(Set<Recipe> recipes) {
-        this.recipes = recipes;
     }
 }

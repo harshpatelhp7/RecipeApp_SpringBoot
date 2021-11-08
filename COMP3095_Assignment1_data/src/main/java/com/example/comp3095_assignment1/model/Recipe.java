@@ -17,7 +17,7 @@ public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String Name;
+    private String name;
     private Long prepTime;
     private Long cookTime;
     private Long totalTime;
@@ -32,7 +32,7 @@ public class Recipe {
     }
 
     public Recipe(String name, Long prepTime, Long cookTime, Long totalTime, String course, String cuisine, User user) {
-        this.Name = name;
+        this.name = name;
         this.prepTime = prepTime;
         this.cookTime = cookTime;
         this.totalTime = totalTime;
@@ -42,7 +42,7 @@ public class Recipe {
     }
 
     public Recipe(String name, Long prepTime, Long cookTime, Long totalTime, String course, String cuisine) {
-        this.Name = name;
+        this.name = name;
         this.prepTime = prepTime;
         this.cookTime = cookTime;
         this.totalTime = totalTime;
@@ -51,11 +51,11 @@ public class Recipe {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        name = name;
     }
 
     public Long getPrepTime() {

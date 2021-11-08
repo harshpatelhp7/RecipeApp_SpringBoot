@@ -24,6 +24,7 @@ import java.util.Random;
 @Controller
 public class UserController {
 
+
     @Autowired
     private UserRepository userRepository;
 
@@ -36,7 +37,6 @@ public class UserController {
         return "success";
     }
 
-
     @RequestMapping("/goregister")//
     public String goregister(){
         return  "register";
@@ -47,6 +47,11 @@ public class UserController {
         return "login";
     }
 
+    @RequestMapping(value = "/plan")
+    public String plan(){return "/user/plan";}
+
+    @RequestMapping(value = "/profile")
+    public String profile(){return "/user/profile";}
 
     @RequestMapping(value = "/gologin")
     @ResponseBody
