@@ -12,6 +12,7 @@ package com.example.comp3095_assignment1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,6 +22,7 @@ import java.util.Random;
 
 @Controller
 public class UserController {
+
 
     @Autowired
     private UserRepository userRepository;
@@ -51,6 +53,11 @@ public class UserController {
         return "login";
     }
 
+    @RequestMapping(value = "/plan")
+    public String plan(){return "/user/plan";}
+
+    @RequestMapping(value = "/profile")
+    public String profile(){return "/user/profile";}
 
     @RequestMapping(value = "/gologin")
     @ResponseBody
