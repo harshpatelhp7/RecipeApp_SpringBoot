@@ -23,7 +23,6 @@ public class Recipe {
     private Long totalTime;
     private String course;
     private String cuisine;
-    private transient String[] ingridients;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="user_id", referencedColumnName = "id")
@@ -32,25 +31,23 @@ public class Recipe {
     public Recipe() {
     }
 
-    public Recipe(String name, Long prepTime, Long cookTime, Long totalTime, String course, String cuisine, String[] ingridients, User user) {
+    public Recipe(String name, Long prepTime, Long cookTime, Long totalTime, String course, String cuisine, User user) {
         this.Name = name;
         this.prepTime = prepTime;
         this.cookTime = cookTime;
         this.totalTime = totalTime;
         this.course = course;
         this.cuisine = cuisine;
-        this.ingridients = ingridients;
         this.user = user;
     }
 
-    public Recipe(String name, Long prepTime, Long cookTime, Long totalTime, String course, String cuisine, String[] ingridients) {
+    public Recipe(String name, Long prepTime, Long cookTime, Long totalTime, String course, String cuisine) {
         this.Name = name;
         this.prepTime = prepTime;
         this.cookTime = cookTime;
         this.totalTime = totalTime;
         this.course = course;
         this.cuisine = cuisine;
-        this.ingridients = ingridients;
     }
 
     public String getName() {
@@ -99,14 +96,6 @@ public class Recipe {
 
     public void setCuisine(String cuisine) {
         this.cuisine = cuisine;
-    }
-
-    public String[] getIngridients() {
-        return ingridients;
-    }
-
-    public void setIngridients(String[] ingridients) {
-        this.ingridients = ingridients;
     }
 
     public User getUser() {

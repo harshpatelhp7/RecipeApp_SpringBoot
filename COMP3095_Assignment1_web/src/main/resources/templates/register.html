@@ -24,7 +24,7 @@ Please Enter Last Name：<input type="text" id="lastname"/><br><br>
       alert("Password must be more than 6 digits");
     } else {
       $.post("/regist",{username:username,password:password,firstname:firstname,lastname:lastname},function (res) {
-        if (res ==="success"){
+        if (res =="success"){
           alert("Register Success");
           window.location.href ="/login";
         } else {

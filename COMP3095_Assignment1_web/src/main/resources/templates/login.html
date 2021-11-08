@@ -26,52 +26,41 @@
   </style>
 </head>
 <body>
-
   <div class="text-center">
     <img class="img-fluid" src="images/recipeIcon.png" alt="icon"/>
 <!--Img from https://icon-library.com/icon/recipe-icon-4.html-->
   </div>
   <br>
-  <div class="border border-secondary p-3 rounded">
+  <div class="border border-secondary p-3 rounded" id="idiv">
     <p class="title">Access to Recipe Project</p>
-
-    <form action= "loggedIn" method="post">
-    <table>
-      <tr>
-        <td><label for="username">User Name: </label></td>
-        <td><input type="text" id="username" name="username" required></td>
-      </tr>
-      <tr>
-        <td><label for="password">Password: </label></td>
-        <td><input type="password" id="password" name="password" required></td>
-      </tr>
-      <tr>
-        <td><input type="submit" value="login"/></td>
-      </tr>
-      <tr>
-        <td><input type="checkbox" name="remember-me" />&nbsp;Remember Me</td>
-      </tr>
-    </table>
-    </form>
-
+    <p>
+      <input id="username" name="username" class="form-control" placeholder="Username"required="required">
+    </p>
+    <p>
+      <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="required">
+    </p>
+    <p>
+      <input type="checkbox" name="remember-me" />&nbsp;Remember Me
+    </p>
+    <p class="login">
+      <button id="login" onclick="login()" class="btn btn-primary">Login</button>
+    </p>
     <div id="formFooter">
       Don't have an account? <a class="underlineHover" href="/goregister">Sign Up</a>
     </div>
   </div>
-
 </body>
-
 <script>
-/*  function login() {
+  function login() {
     var username = $("#username").val();
     var password = $("#password").val();
     $.post("/gologin",{username:username,password:password},function (res) {
-      if (res ==="success"){
+      if (res =="success"){
         window.location.href ="/index";
       } else {
         alert("Invalid Username/Password");
       }
     })
-  }*/
+  }
 </script>
 </html>
