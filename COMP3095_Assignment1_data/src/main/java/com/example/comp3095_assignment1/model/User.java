@@ -1,4 +1,4 @@
-package com.example.comp3095_assignment1;
+package com.example.comp3095_assignment1.model;
 /*********************************************************************************
  * Project: < Recipe Project>
  * Assignment: < assignment #1 >

@@ -1,4 +1,4 @@
-package com.example.comp3095_assignment1;
+package com.example.comp3095_assignment1.controllers;
 
 /*********************************************************************************
 * Project: < Recipe Project>
@@ -9,10 +9,11 @@ package com.example.comp3095_assignment1;
         * Description: This is controller for this assignment, gives app url path to follow
         *********************************************************************************/
 
+import com.example.comp3095_assignment1.model.User;
+import com.example.comp3095_assignment1.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -53,12 +54,6 @@ public class UserController {
         return "login";
     }
 
-    @RequestMapping(value = "/plan")
-    public String plan(){return "/user/plan";}
-
-    @RequestMapping(value = "/profile")
-    public String profile(){return "/user/profile";}
-
     @RequestMapping(value = "/gologin")
     @ResponseBody
     public String login(@RequestParam(value = "username")String username, @RequestParam(value = "password")String password){
@@ -79,4 +74,13 @@ public class UserController {
         return "login";
     }
 
+    @RequestMapping(value = "/user/plan.html")
+    public String plan(){
+        return "user/plan";
+    }
+
+    @RequestMapping(value = "/user/profile.html")
+    public String profile(){
+        return "user/profilfe";
+    }
 }
