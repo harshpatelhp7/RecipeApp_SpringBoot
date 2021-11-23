@@ -2,9 +2,223 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Create Recipe</title>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="../user/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <!--Sign Out-->
+    <script typet="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        function logout(){
+            window.location.href="/login"
+        }
+        function plan(){
+            window.location.href="/plan/query"
+        }
+        function profile(){
+            window.location.href="/user/goProfile"
+        }
+        function createRecipe(){
+            window.location.href="/user/createRecipes"
+        }
+        function planAdd(){
+            window.location.href="/plan/addOrEdit"
+        }
+        function view(){
+            window.location.href="/user/view"
+        }
+        function index(){
+            window.location.href="/index"
+        }
+        $(document).ready(function() {
+            $('.search_box').click(function(){
+                window.location.href="/search";
+            });
+        });
+    </script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+    *{
+        list-style: none;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    body{
+        background: aliceblue;
+        color: #505978;
+    }
+
+    ul li a{
+        display: block;
+        color: #505978;
+    }
+
+    .home_nav{
+        width: 100%;
+        height: 60px;
+        background:#437FC7;
+        padding: 0 50px;
+        border-radius: 3px;
+    }
+
+
+    ul.menu,
+    ul.social_items{
+        display: flex;
+    }
+
+    .home_nav ul.menu a{
+        margin: 0 5px;
+        width: 120px;
+        padding: 12px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+
+    .home_nav .logo{
+        font-weight: 700;
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    .home_nav .logo span{
+        color: aliceblue;
+    }
+
+    .home_nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .home_nav .navbar_left,
+    .navbar_right ul{
+        display: flex;
+        align-items: center;
+    }
+
+    .home_nav .menu{
+        margin-left: 50%;
+    }
+
+    .home_nav.home_nav .menu a{
+        height: 60px;
+        padding: 20px 12px;
+    }
+
+    .home_nav.home_nav .menu a:hover,
+    .home_nav.home_nav .menu a.active{
+        border-bottom: 4px solid #505978;
+    }
+
+    .navbar_right ul li a{
+        margin: 0 5px;
+        padding: 5px 20px;
+        border-radius: 3px;
+        transition: all 0.2s ease;
+    }
+
+    .navbar_right ul li a:hover{
+        background: #505978;
+        color: #fff;
+        display: block;
+    }
+
+    .search_box{
+        position: relative;
+        height: 35px;
+        width: 225px;
+    }
+
+    .search_box input{
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: 0;
+        border: 1px solid #505978;
+        width: 50px;
+        height: 35px;
+        border-radius: 3px;
+        outline: none;
+
+        transition: all 0.2s ease;
+    }
+
+    .search_box i{
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        z-index: 1;
+    }
+
+    .search_box input:focus{
+        width: 225px;
+    }
+
+    /* Drop-down menu */
+    .sub-menu{
+        display: none;
+        font-size: smaller;
+    }
+
+    .navbar_right ul li:hover .sub-menu{
+        display: block;
+        position: absolute;
+    }
+
+    .navbar_right ul li:hover .sub-menu ul {
+        display: block;
+        margin: 10px;
+    }
+    .navbar_right ul li:hover .sub-menu ul li {
+        width: 150px;
+        padding: 10px;
+        background: white;
+        border-bottom: 1px solid #eaedf1;
+        border-radius: 0;
+        text-align: left;
+    }
+
+    .navbar_right ul li:hover .sub-menu ul li:last-child{
+        border-bottom: none;
+    }
+    </style>
 </head>
 <body>
+
+<div class="home_nav">
+    <div class="navbar_left">
+        <div class="logo">Recipe<span>Project</span></div>
+        <ul  class="menu">
+            <li><a onclick="index()">Home</a></li>
+            <li><a onclick="view()">Recipes</a></li>
+            <li><a onclick="createRecipe()">Create Recipes</a></li>
+            <li><a onclick="plan()">Event</a></li>
+        </ul>
+    </div>
+    <div class="navbar_right">
+        <ul>
+            <div class="search_box">
+                <i class="fas fa-search"></i>
+                <input type="text" class="input_search">
+            </div>
+            <li><a href="#">Hello User !</a>
+                <div class="sub-menu">
+                    <ul>
+                        <li><a onclick="planAdd()">Add Event</a></li>
+                        <li><a onclick="profile()">My Profile</a></li>
+                        <li><a onclick="profile()">Account Settings</a></li>
+                        <li><a onclick="logout()">Sign Out</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
 
 <form action= "createdRecipe" method="post">
     <table>

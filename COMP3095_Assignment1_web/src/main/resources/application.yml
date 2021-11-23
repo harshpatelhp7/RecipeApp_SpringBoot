@@ -17,3 +17,10 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password:
+  thymeleaf:
+    enabled: true
+    encoding: utf-8
+    prefix: classpath:/templates/
+    cache: false
+    mode: HTML
+    suffix: .html

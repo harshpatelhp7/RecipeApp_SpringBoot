@@ -27,7 +27,10 @@ Please Enter Last Name：<input type="text" id="lastname"/><br><br>
         if (res =="success"){
           alert("Register Success");
           window.location.href ="/login";
-        } else {
+        } else if (res =="failed") {
+          alert("Register failed. Please check username.");
+        }
+        else {
           alert("Register failed. Please check and try again.");
         }
       })
