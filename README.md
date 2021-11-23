@@ -6,6 +6,11 @@ Ming Yang:
 - [x] Register into the application
 - [x] Login Into the application
 - [x] Logout of the application
+- [x] View Event
+- [x] Add Event
+- [x] Edit Event
+- [x] Delete Event
+- [x] Forget Password (Change password base on name and username)
 
 
 Rafaelak:
