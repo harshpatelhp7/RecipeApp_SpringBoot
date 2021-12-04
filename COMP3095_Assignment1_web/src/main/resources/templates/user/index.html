@@ -6,20 +6,23 @@
     <link rel="stylesheet" href="../user/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <!--Sign Out-->
-    <script src="https://libs.baidu.com/jquery/1.8.3/jquery.min.js">
-    </script>
+    <script typet="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
     <script>
         function logout(){
             window.location.href="/login"
         }
         function plan(){
-            window.location.href="/plan"
+            window.location.href="/plan/query"
         }
         function profile(){
-            window.location.href="/profile"
+            window.location.href="/user/goProfile"
         }
-<<<<<<< Updated upstream
-=======
+        function createRecipe(){
+            window.location.href="/user/createRecipes"
+        }
+        function planAdd(){
+            window.location.href="/plan/addOrEdit"
+        }
         function view(){
             window.location.href="/recipe/view"
         }
@@ -31,7 +34,6 @@
                 window.location.href="/search";
             });
         });
->>>>>>> Stashed changes
     </script>
     <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
     *{
@@ -192,9 +194,10 @@
     <div class="navbar_left">
         <div class="logo">Recipe<span>Project</span></div>
         <ul  class="menu">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">Recipes</a></li>
-            <li><a onclick="plan()">Plan</a></li>
+            <li><a onclick="index()">Home</a></li>
+            <li><a onclick="view()">Recipes</a></li>
+            <li><a onclick="createRecipe()">Create Recipes</a></li>
+            <li><a onclick="plan()">Event</a></li>
         </ul>
     </div>
     <div class="navbar_right">
@@ -206,6 +209,7 @@
             <li><a href="#">Hello User !</a>
                 <div class="sub-menu">
                     <ul>
+                        <li><a onclick="planAdd()">Add Event</a></li>
                         <li><a onclick="profile()">My Profile</a></li>
                         <li><a onclick="profile()">Account Settings</a></li>
                         <li><a onclick="logout()">Sign Out</a></li>
@@ -216,4 +220,5 @@
     </div>
 </div>
 </body>
+
 </html>

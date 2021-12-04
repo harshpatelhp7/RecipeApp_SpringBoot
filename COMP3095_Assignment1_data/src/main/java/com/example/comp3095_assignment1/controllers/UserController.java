@@ -47,8 +47,12 @@ public class UserController {
         return "login";
     }
 
-    @RequestMapping(value = "/plan")
+    @RequestMapping(value = {"/plan", "/plan/query"})
     public String plan(){return "/user/plan";}
+
+    @RequestMapping(value = { "/plan/addOrEdit"})
+    public String planAdd(){return "/user/planAdd";}
+    
 
     @RequestMapping(value = "/profile")
     public String profile(){return "/user/profile";}

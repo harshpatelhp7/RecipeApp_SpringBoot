@@ -23,7 +23,7 @@ public class RecipeController {
     @Autowired
     private RecipeRepository recipeRepository;
 
-    @RequestMapping(value = "/user/createRecipe.html")
+    @RequestMapping(value = "/user/createRecipes")
     public String createRecipe(){
         return "user/createRecipe";
     }
@@ -40,6 +40,14 @@ public class RecipeController {
         return "recipe/view";
     }
 
+    @RequestMapping(value = "/user/goProfile")
+    public String goProfile(){
+        return "user/profile";
+    }
 
+    @RequestMapping(value = "/search")
+    public String search(){
+        return "recipe/search";
+    }
 
 }
