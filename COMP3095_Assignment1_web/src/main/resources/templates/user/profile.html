@@ -18,6 +18,9 @@
         function plan(){
             window.location.href="/plan"
         }
+        function view(){
+            window.location.href="/recipe/view"
+        }
     </script>
     <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
     *{
@@ -179,7 +182,7 @@
         <div class="logo">Recipe<span>Project</span></div>
         <ul  class="menu">
             <li><a onclick="index()">Home</a></li>
-            <li><a href="#">Recipes</a></li>
+            <li><a onclick="view()">Recipes</a></li>
             <li><a onclick="plan()">Plan</a></li>
         </ul>
     </div>

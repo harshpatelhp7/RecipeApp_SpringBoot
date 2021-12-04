@@ -13,6 +13,7 @@ import com.example.comp3095_assignment1.model.Recipe;
 import com.example.comp3095_assignment1.repositories.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -28,10 +29,15 @@ public class RecipeController {
     }
 
     @RequestMapping(value = "/user/createdRecipe")
-    @ResponseBody
     public String createdRecipe(Recipe recipe){
         recipeRepository.save(recipe);
-        return "Recipe Saved";
+        return "user/createRecipe";
+    }
+
+    @RequestMapping(value = "/recipe/view")
+    public String viewRecipe(Model model){
+        model.addAttribute("recipes", recipeRepository.findAll());
+        return "recipe/view";
     }
 
 

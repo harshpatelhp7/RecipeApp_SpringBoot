@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Home Page</title>
+    <title>Profile Page</title>
     <link rel="stylesheet" href="../user/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <!--Sign Out-->
@@ -13,13 +13,11 @@
             window.location.href="/login"
         }
         function plan(){
-            window.location.href="/plan"
+            window.location.href="/plan/query"
         }
         function profile(){
-            window.location.href="/profile"
+            window.location.href="/user/goProfile"
         }
-<<<<<<< Updated upstream
-=======
         function createRecipe(){
             window.location.href="/user/createRecipes"
         }
@@ -37,7 +35,6 @@
                 window.location.href="/search";
             });
         });
->>>>>>> Stashed changes
     </script>
     <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
     *{
@@ -190,41 +187,6 @@
     .navbar_right ul li:hover .sub-menu ul li:last-child{
         border-bottom: none;
     }
-
-    .table_container{
-        margin-left: auto;
-        margin-right: auto;
-        border-collapse: collapse;
-        font-size: 1.5em;
-        font-family: sans-serif;
-        min-width: 400px;
-        margin-top: 5%;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .table_container thead tr {
-        background-color: #ff4400;
-        color: #ffffff;
-        text-align: left;
-    }
-
-    .table_container th,
-    .table_container td {
-        padding: 12px 15px;
-    }
-
-    .table_container tbody tr {
-        border-bottom: 1px solid #dddddd;
-    }
-
-    .table_container tbody tr:nth-of-type(even) {
-        background-color: #f3f3f3;
-    }
-
-    .table_container tbody tr:last-of-type {
-        border-bottom: 2px solid #ff4400;
-    }
-
     </style>
 </head>
 <body>
@@ -233,9 +195,10 @@
     <div class="navbar_left">
         <div class="logo">Recipe<span>Project</span></div>
         <ul  class="menu">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">Recipes</a></li>
-            <li><a onclick="plan()">Plan</a></li>
+            <li><a onclick="index()">Home</a></li>
+            <li><a onclick="view()">Recipes</a></li>
+            <li><a onclick="createRecipe()">Create Recipes</a></li>
+            <li><a onclick="plan()">Event</a></li>
         </ul>
     </div>
     <div class="navbar_right">
@@ -247,6 +210,7 @@
             <li><a href="#">Hello User !</a>
                 <div class="sub-menu">
                     <ul>
+                        <li><a onclick="planAdd()">Add Event</a></li>
                         <li><a onclick="profile()">My Profile</a></li>
                         <li><a onclick="profile()">Account Settings</a></li>
                         <li><a onclick="logout()">Sign Out</a></li>
@@ -256,31 +220,6 @@
         </ul>
     </div>
 </div>
-
-            <h1>Recipe List</h1>
-
-            <table class="table_container">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Course</th>
-                        <th>Cuisine</th>
-                        <th>Prep-Time</th>
-                        <th>Cook-Time</th>
-                        <th>Total-Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="recipe :${recipes} ">
-                        <td th:text="${recipe.name}"> </td>
-                        <td th:text="${recipe.course}"> </td>
-                        <td th:text="${recipe.cuisine}"> </td>
-                        <td th:text="${recipe.prepTime}"> </td>
-                        <td th:text="${recipe.cookTime}"> </td>
-                        <td th:text="${recipe.totalTime}"> </td>
-                    </tr>
-                </tbody>
-            </table>
 
 </body>
 </html>
