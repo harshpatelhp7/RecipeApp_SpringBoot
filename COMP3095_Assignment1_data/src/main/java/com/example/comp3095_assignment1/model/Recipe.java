@@ -31,6 +31,17 @@ public class Recipe {
     public Recipe() {
     }
 
+    public Recipe(Long id, String name, Long prepTime, Long cookTime, Long totalTime, String course, String cuisine, User user) {
+        this.id = id;
+        this.name = name;
+        this.prepTime = prepTime;
+        this.cookTime = cookTime;
+        this.totalTime = totalTime;
+        this.course = course;
+        this.cuisine = cuisine;
+        this.user = user;
+    }
+
     public Recipe(String name, Long prepTime, Long cookTime, Long totalTime, String course, String cuisine, User user) {
         this.name = name;
         this.prepTime = prepTime;

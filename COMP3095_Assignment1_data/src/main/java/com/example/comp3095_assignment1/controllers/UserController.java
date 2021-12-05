@@ -52,7 +52,7 @@ public class UserController {
 
     @RequestMapping(value = { "/plan/addOrEdit"})
     public String planAdd(){return "/user/planAdd";}
-    
+
 
     @RequestMapping(value = "/profile")
     public String profile(){return "/user/profile";}

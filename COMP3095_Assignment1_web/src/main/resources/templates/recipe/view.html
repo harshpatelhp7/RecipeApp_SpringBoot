@@ -30,6 +30,14 @@
         function index(){
             window.location.href="/index"
         }
+        function viewIngredients(name){
+            window.location.href = `/recipe/ingredients/${name}`
+        }
+
+        function viewSteps(name){
+            window.location.href = `/recipe/steps/${name}`
+        }
+
         $(document).ready(function() {
             $('.search_box').click(function(){
                 window.location.href="/search";
@@ -222,6 +230,35 @@
         border-bottom: 2px solid #ff4400;
     }
 
+    .action_ingredients, .action_steps{
+        color: #fff !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 20px;
+        border-radius: 5px;
+        display: inline-block;
+        border: none;
+        transition: all 0.4s ease 0s;
+    }
+
+    .action_steps{
+        background: #0064ff;
+    }
+
+    .action_ingredients{
+        background: #12b200;
+    }
+
+    .action_ingredients:hover, .action_steps:hover{
+        background: #ff0000;
+        letter-spacing: 1px;
+        -webkit-box-shadow: 0px 5px 40px -10px rgb(253, 253, 254);
+        -moz-box-shadow: 0px 5px 40px -10px rgb(255, 0, 0);
+        box-shadow: 5px 40px -10px rgb(255, 0, 0);
+        transition: all 0.4s ease 0s;
+    }
+
+
     </style>
 </head>
 <body>
@@ -263,20 +300,17 @@
                     <tr>
                         <th>Name</th>
                         <th>Course</th>
-                        <th>Cuisine</th>
-                        <th>Prep-Time</th>
-                        <th>Cook-Time</th>
-                        <th>Total-Time</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="recipe :${recipes} ">
                         <td th:text="${recipe.name}"> </td>
                         <td th:text="${recipe.course}"> </td>
-                        <td th:text="${recipe.cuisine}"> </td>
-                        <td th:text="${recipe.prepTime}"> </td>
-                        <td th:text="${recipe.cookTime}"> </td>
-                        <td th:text="${recipe.totalTime}"> </td>
+                        <td>
+                            <button type="button" class="action_ingredients" th:attr="onclick=|viewIngredients('${recipe.name}')|">Ingredients</button>
+                            <button type="button" class="action_steps" th:attr="onclick=|viewSteps('${recipe.name}')|">Steps</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
