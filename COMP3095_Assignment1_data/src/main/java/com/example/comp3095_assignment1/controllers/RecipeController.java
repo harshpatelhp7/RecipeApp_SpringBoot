@@ -1,3 +1,4 @@
+package com.example.comp3095_assignment1.controllers;
 /*********************************************************************************
  * Project: < Recipe Project>
  * Assignment: < assignment #1 >
@@ -7,7 +8,6 @@
  * Description: This is controller for this assignment, gives app url path to follow
  *********************************************************************************/
 
-package com.example.comp3095_assignment1.controllers;
 
 import com.example.comp3095_assignment1.model.Recipe;
 import com.example.comp3095_assignment1.repositories.RecipeRepository;
