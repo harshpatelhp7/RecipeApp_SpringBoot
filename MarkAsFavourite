@@ -1,0 +1,21 @@
+    public void onClick(View v) {
+           FavoriteList favoriteList=new FavoriteList();
+
+           int id=productList.getId();
+           String image=productList.getImage();
+           String name=productList.getMame();
+
+           favoriteList.setId(id);
+           favoriteList.setImage(image);
+           favoriteList.setName(name);
+
+           if (MainActivity.favoriteDatabase.favoriteDao().isFavorite(id)!=1){
+viewHolder.fav_btn.setImageResource(R.drawable.ic_favorite);
+               MainActivity.favoriteDatabase.favoriteDao().addData(favoriteList);
+
+           }else {
+              viewHolder.fav_btn.setImageResource(R.drawable.ic_favorite_border_black_24dp);
+               MainActivity.favoriteDatabase.favoriteDao().delete(favoriteList);
+
+           }
+});
