@@ -13,6 +13,7 @@ import com.example.comp3095_assignment1.model.User;
 import com.example.comp3095_assignment1.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,7 +33,15 @@ public class UserController {
     @ResponseBody
     public String regist(@RequestParam(value = "username")String username, @RequestParam(value = "password")String password,
                          @RequestParam(value = "firstname")String firstname, @RequestParam(value = "lastname")String lastname){
-        User user = new User(username,password,firstname,lastname);
+        List<User> users = userRepository.findByUsername(username);
+        if (!CollectionUtils.isEmpty(users)){
+            return "failed";
+        }
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        user.setFirstname(firstname);
+        user.setLastname(lastname);
         userRepository.save(user);
         return "success";
     }
@@ -46,16 +55,6 @@ public class UserController {
     public String login(){
         return "login";
     }
-
-    @RequestMapping(value = {"/plan", "/plan/query"})
-    public String plan(){return "/user/plan";}
-
-    @RequestMapping(value = { "/plan/addOrEdit"})
-    public String planAdd(){return "/user/planAdd";}
-
-
-    @RequestMapping(value = "/profile")
-    public String profile(){return "/user/profile";}
 
     @RequestMapping(value = "/gologin")
     @ResponseBody
@@ -77,4 +76,72 @@ public class UserController {
         return "login";
     }
 
+    @RequestMapping(value = "/user/plan.html")
+    public String plan(){
+        return "user/plan";
+    }
+
+    @RequestMapping(value = "/user/profile.html")
+    public String profile(){
+        return "user/profilfe";
+    }
+
+    @RequestMapping(value = "/user/view")
+    public String view(){
+        return "recipe/view";
+    }
+
+    @RequestMapping(value = "/user/forget")
+    public String forget(){
+        return "forget";
+    }
+
+    @RequestMapping(value = "/user/forgetConfirm")
+    @ResponseBody
+    public String forgetConfirm(@RequestParam(value = "username", required = false)String username,
+                                @RequestParam(value = "firstname", required = false)String firstname,
+                                @RequestParam(value = "lastname", required = false)String lastname){
+        List<User> users = userRepository.findByUsername(username);
+        if (users.isEmpty()){
+            return "false";
+        }else {
+            User user = users.get(0);
+            if (!user.getFirstname().equals(firstname) || !user.getLastname().equals(lastname)){
+                return "false";
+            }
+        }
+        return "true";
+    }
+
+    @RequestMapping(value = "/user/passwordConfirm")
+    public String passwordConfirm(@RequestParam("username")String username,
+                                  @RequestParam("firstname")String firstname,
+                                  @RequestParam("lastname")String lastname,
+                                  Model model){
+        List<User> users = userRepository.findByUsername(username);
+        if (users.isEmpty()){
+            return "";
+        }else {
+            User user = users.get(0);
+            if (!user.getFirstname().equals(firstname) || !user.getLastname().equals(lastname)){
+                return "";
+            }
+        }
+        model.addAttribute("user", users.get(0));
+        return "confirmForget";
+    }
+
+    @RequestMapping(value = "/user/changePwd")
+    @ResponseBody
+    public String changePwd(@RequestParam("username")String username, @RequestParam("password")String password){
+        List<User> users = userRepository.findByUsername(username);
+        User user = new User();
+        user.setId(users.get(0).getId());
+        user.setPassword(password);
+        user.setUsername(users.get(0).getUsername());
+        user.setFirstname(users.get(0).getFirstname());
+        user.setLastname(users.get(0).getLastname());
+        userRepository.save(user);
+        return "true";
+    }
 }
