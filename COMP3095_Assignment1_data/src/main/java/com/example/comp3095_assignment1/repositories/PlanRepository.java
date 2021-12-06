@@ -1,5 +1,15 @@
 package com.example.comp3095_assignment1.repositories;
 
+/*********************************************************************************
+ * Project: < Recipe Project>
+ * Assignment: < assignment #2 >
+ * Author(s): < Ming Yang>
+ * Student Number: < 101287844>
+ * Date: 11/31/2021
+ * Description: This is repository for this assignment, define some terms like findByname
+ * and any other terms needed
+ *********************************************************************************/
+
 import com.example.comp3095_assignment1.model.Plan;
 import com.example.comp3095_assignment1.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;

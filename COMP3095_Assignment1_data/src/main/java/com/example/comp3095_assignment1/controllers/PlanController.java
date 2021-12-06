@@ -1,5 +1,15 @@
 package com.example.comp3095_assignment1.controllers;
 
+/*********************************************************************************
+ * Project: < Recipe Project>
+ * Assignment: < assignment #2 >
+ * Author(s): < Ming Yang>
+ * Student Number: < 101287844>
+ * Date: 11/31/2021
+ * Description: This is controller for this assignment, gives app url path to follow
+ *********************************************************************************/
+
+
 import com.example.comp3095_assignment1.model.Plan;
 import com.example.comp3095_assignment1.repositories.PlanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
