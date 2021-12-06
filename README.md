@@ -12,8 +12,12 @@ Rafaelak:
 
 
 Harsh:
-- [ ] View a Recipe
-- [ ] Search for a Recipe
+- [x] View a Recipe
+- [x] Search for a Recipe
+- [x] View Recipe List
+- [x] Create a Recipe
+- [x] View ingredients of a Recipe
+- [x] View steps of a Recipe
 
 Hans:
 - [x] Create a recipe
