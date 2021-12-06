@@ -1,0 +1,50 @@
+ window.location.href="/login"
+        }
+        function plan(){
+            window.location.href="/plan"
+            window.location.href="/plan/query"
+        }
+        function profile(){
+            window.location.href="/profile"
+            window.location.href="/user/goProfile"
+        }
+        function createRecipe(){
+            window.location.href="/user/createRecipes"
+        }
+        function planAdd(){
+            window.location.href="/plan/addOrEdit"
+        }
+        function view(){
+            window.location.href="/user/view"
+        }
+        function index(){
+            window.location.href="/index"
+        }
+        $(document).ready(function() {
+            $('.search_box').click(function(){
+                window.location.href="/search";
+            });
+        });
+    </script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+    *{
+    <div class="navbar_left">
+        <div class="logo">Viw Favourite Recipe<span>Project</span></div>
+        <ul  class="menu">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Recipes</a></li>
+            <li><a onclick="plan()">Plan</a></li>
+            <li><a onclick="index()">Home</a></li>
+            <li><a onclick="view()"> Favourite Recipes</a></li>
+            <li><a onclick="createRecipe()">Create Recipes</a></li>
+            <li><a onclick="plan()">Event</a></li>
+        </ul>
+    </div>
+    <div class="navbar_right">
+            <li><a href="#">Hello!</a>
+                <div class="sub-menu">
+                    <ul>
+                        <li><a onclick="planAdd()">Add Event</a></li>
+                        <li><a onclick="profile()">My Profile</a></li>
+                        <li><a onclick="profile()">Account Settings</a></li>
+                        <li><a onclick="logout()">Sign Out</a></li>
