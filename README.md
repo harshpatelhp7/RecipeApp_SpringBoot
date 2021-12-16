@@ -1,25 +1,7 @@
-# COMP3095_Assignment1
+![HOME-PAGE](./home.JPG?raw=true "Home Page")
 
-This repo is dedicated for Assignment 1 of Java Web development
+![View-PAGE](./view.JPG?raw=true "View Page")
 
-Ming Yang:
-- [x] Register into the application
-- [x] Login Into the application
-- [x] Logout of the application
-- [x] View Event
-- [x] Add Event
-- [x] Edit Event
-- [x] Delete Event
-- [x] Forget Password (Change password base on name and username)
+![Create-PAGE](./create.JPG?raw=true "Create Page")
 
-
-Rafaelak:
-- [ ] Create a recipe
-
-Harsh:
-- [ ] View a Recipe
-- [ ] Search for a Recipe
-
-Hans:
-- [ ] Plan a meal
-- [ ] View Profile
+![Ingredients-PAGE](./recipe_ingredients.JPG?raw=true "Home Page")
