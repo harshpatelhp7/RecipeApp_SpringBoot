@@ -1,7 +1,7 @@
-![HOME-PAGE](./home.JPG?raw=true "Home Page")
+![HOME-PAGE](./home.jpg?raw=true "Home Page")
 
-![View-PAGE](./view.JPG?raw=true "View Page")
+![View-PAGE](./view.jpg?raw=true "View Page")
 
-![Create-PAGE](./create.JPG?raw=true "Create Page")
+![Create-PAGE](./create.jpg?raw=true "Create Page")
 
-![Ingredients-PAGE](./recipe_ingredients.JPG?raw=true "Home Page")
+![Ingredients-PAGE](./recipe_ingredients.jpg?raw=true "Ingredients Page")
